@@ -23,7 +23,14 @@ import java.util.Optional;
 @RequestMapping("/libros")
 public class LibrosControlador {
 
-   
+    @Autowired
+    public Libro_servicio libroServicio;
+
+    @PostMapping("/libros/{id_publicacion}")
+    public Libros guardarConPublicaciones(@RequestBody Libros libros,
+                                          @PathVariable Long id_publicacion){
+        return libroServicio.guardarLibrosConPublicacion(libros,id_publicacion);
+    }
 
     @GetMapping("/obtener")
     public List<Libros> listarTodosLibros(){
