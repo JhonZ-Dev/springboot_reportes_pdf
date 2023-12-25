@@ -17,16 +17,6 @@ public class PublicacionesControlador {
     @Autowired
     private Publicacion_servicio publicacionServicio;
 
-    @PostMapping("/guardar/publicaciones")
-    public Publicacion guardar(@RequestBody Publicacion publicacion){
-        return publicacionServicio.guardarPublicacion(publicacion);
-    }
-
-    @GetMapping("/listar/publicaciones")
-    public List<Publicacion> listar(){
-        return publicacionServicio.listarPublicaciones();
-    }
-
 
 
     @PutMapping("/actualizar/{id_publicacion}")
